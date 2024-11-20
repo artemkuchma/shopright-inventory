@@ -1,0 +1,18 @@
+<div id = 'notifications'>
+    <?php if(!empty($notifications)) : ?>
+    <?php foreach ($notifications as $notification): ?>
+    <div class="alert alert-info" role="alert">
+        <?= $notification ?>
+    </div>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</div>
+<div id = 'flash_messages'>
+    <?php if(!empty($flash_messages)) : ?>
+    <?php foreach ($flash_messages as $message): ?>
+    <div class="alert alert-info" role="alert">
+        <?= $message ?>
+    </div>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</div>

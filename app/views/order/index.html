@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Orders List</h1>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product ID</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php if (!empty($orders)): ?>
+        <?php foreach ($orders as $order): ?>
+        <tr>
+            <th scope="row"><?= htmlspecialchars($order['id']) ?></th>
+            <td><?= $order['product_id'] ?></td>
+            <td><?= $order['quantity'] ?></td>
+            <td><?= date('Y-m-d H:i:s', $order['timestamp']) ?></td>
+        </tr>
+        <?php endforeach; ?>
+        <?php else: ?>
+        <tr>
+            <td colspan="4" class="text-center">No orders available</td>
+        </tr>
+        <?php endif; ?>
+        </tbody>
+    </table>
+
+</div>

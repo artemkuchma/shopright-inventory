@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Products List</h1>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Stock</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php if (!empty($products)): ?>
+        <?php foreach ($products as $product): ?>
+        <tr>
+            <th scope="row"><?= $product['id'] ?></th>
+            <td><?= $product['name'] ?></td>
+            <td><?= number_format($product['price'], 2) ?></td>
+            <td id="pr_<?= $product['id'] ?>"><?= $product['stock'] ?></td>
+        </tr>
+        <?php endforeach; ?>
+        <?php else: ?>
+        <tr>
+            <td colspan="4" class="text-center">No products available</td>
+        </tr>
+        <?php endif; ?>
+        </tbody>
+    </table>
+
+</div>
